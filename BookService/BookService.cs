@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -42,7 +42,11 @@ namespace Book.Services
                 }
                 else
                 {
-                    group.First(b => !b.Contains(enu.Current)).Add(enu.Current);
+                    // For best discount, it's better to have 2 * 4 than 5 + 3
+                    group.Where(b => !b.Contains(enu.Current))
+                        .OrderBy(b => b.Count)
+                        .First()
+                        .Add(enu.Current);
                 }
             }
 
