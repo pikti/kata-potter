@@ -25,7 +25,7 @@ namespace Book.UnitTests.Services
         [Theory]
         [InlineData(new int[]{})]
         [InlineData(new int[]{0,1,2,3,4,5,6})]
-        public void GetPrice_InputIsEmpty_ReturnArgumentOutOfRangeException(int[] value)
+        public void GetPrice_InputIsOutOfRange_ReturnArgumentOutOfRangeException(int[] value)
         {
             Assert.Throws<ArgumentOutOfRangeException>(() => _bookService.GetPrice(value));
         }
