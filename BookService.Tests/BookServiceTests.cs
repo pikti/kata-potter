@@ -37,7 +37,11 @@ namespace Book.UnitTests.Services
         [InlineData(new int[]{1,2,3,4}, 25.6)]
         [InlineData(new int[]{1,2,3,4,5}, 30)]
         [InlineData(new int[]{1,1,1,1,1}, 40)]
-        [InlineData(new int[]{5,1,2,3,2,1,5,4}, 51.6)]
+        [InlineData(new int[]{  1,1,1,1,1,
+                                2,2,2,2,2,
+                                3,3,3,3,3,
+                                4,4,4,4,
+                                5,5,5,5	    }, 141.2)]
         public void GetPrice_InputIsCorrect_ReturnCorrectPrice(int[] value, double expected)
         {
             var result = _bookService.GetPrice(value);
